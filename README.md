@@ -38,7 +38,7 @@ this repo's a browser extension that strips twitter down to what it should be. i
 1. **Clone or download this repository:**
 
    ```bash
-   git clone https://github.com/your-username/de-muskify-twitter.git
+   git clone https://github.com/felomousa/de-muskify-twitter.git
    cd de-muskify-twitter
    ```
 
