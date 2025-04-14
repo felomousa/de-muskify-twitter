@@ -54,7 +54,7 @@ this repo's a browser extension that strips twitter down to what it should be. i
 
 Once loaded, the extension will start working immediately.
 
-## Skills & Technical Insights
+## Skills Showcased
 
 - **DOM Manipulation:** Used query selectors and MutationObservers to identify and remove dynamically injected elements.
 - **Browser Extension Development:** Configured manifest files and wrote content scripts to inject JavaScript into web pages.
