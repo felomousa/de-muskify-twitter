@@ -18,6 +18,46 @@ const removeGrokDrawer = () => {
     document.querySelectorAll('[data-testid="GrokDrawer"]').forEach(el => el.remove());
 };
 
+
+// remove Grok actions button in each tweet
+const removeGrokActions = () => {
+    document.querySelectorAll('button[aria-label="Grok actions"]').forEach(el => el.remove());
+};
+
+// remove Verified Orgs link
+const removeVerifiedOrgs = () => {
+    document.querySelectorAll('a[aria-label="Verified Orgs"]').forEach(el => el.remove());
+};
+
+// remove Premium link
+const removePremium = () => {
+    document.querySelectorAll('a[aria-label="Premium"]').forEach(el => el.remove());
+};
+
+// remove Communities link
+const removeCommunities = () => {
+    document.querySelectorAll('a[aria-label="Communities"]').forEach(el => el.remove());
+};
+
+// remove Jobs link
+const removeJobs = () => {
+    document.querySelectorAll('a[aria-label="Jobs"]').forEach(el => el.remove());
+};
+
+// remove Lists link
+const removeLists = () => {
+    document.querySelectorAll('a[aria-label="Lists"]').forEach(el => el.remove());
+};
+
+// rename "posts" back to "tweets"
+const replacePostWithTweet = () => {
+    document.querySelectorAll('span').forEach(el => {
+        if (el.textContent.trim() === "Post") {
+            el.textContent = "Tweet";
+        }
+    });
+};
+
 const replaceXWithTwitterBird = () => {
     const xLink = document.querySelector('a[aria-label="X"]');
     if (xLink && !xLink.dataset.replaced) {
@@ -47,6 +87,13 @@ const removeUnwantedElements = () => {
     removeGrokLink();
     removeGrokDrawer();
     replaceXWithTwitterBird();
+    removeGrokActions();
+    removeVerifiedOrgs();
+    removePremium();
+    removeCommunities();
+    removeJobs();
+    removeLists();
+    replacePostWithTweet();
 };
 
 removeUnwantedElements();
