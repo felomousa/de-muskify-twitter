@@ -83,6 +83,11 @@ const removeTrendingNowSection = () => {
     });
 };
 
+// remove blue checks lol
+const removeVerifiedCheckmarks = () => {
+    document.querySelectorAll('svg[aria-label="Verified account"]').forEach(el => el.remove());
+};
+
 // annoying css dividers
 function removeRemnants() {
     document.querySelectorAll('div.css-175oi2r.r-kemksi.r-1kqtdi0.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x').forEach(el => el.remove());
@@ -146,6 +151,7 @@ const updateFaviconAndTitle = () => {
 };
 
 const removeUnwantedElements = () => {
+    removeVerifiedCheckmarks();
     removeRemnants();
     removeFooterLinks();
     removeTrendingNowSection();
