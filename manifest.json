@@ -1,6 +1,6 @@
 {
     "name": "de-muskify-twitter",
-    "description": "removes all the unwanted features that musk added to twitter",
+    "description": "removes all the unwanted bloat that musk added to twitter",
     "version": "1.0",
     "manifest_version": 3,
     "action": {

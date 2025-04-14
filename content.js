@@ -58,6 +58,46 @@ const replacePostWithTweet = () => {
     });
 };
 
+// stupid white glow effect on everything
+const removeWhiteGlowEffect = () => {
+    const styleElem = document.createElement("style");
+    styleElem.textContent = `
+      *, *::before, *::after {
+        box-shadow: none !important;
+      }
+    `;
+    document.head.appendChild(styleElem);
+};
+
+// Remove the footer navigation containing the legal and corporate links
+const removeFooterLinks = () => {
+    document.querySelectorAll('nav[aria-label="Footer"]').forEach(el => el.remove());
+};
+
+// remove the trending section container
+const removeTrendingNowSection = () => {
+    document.querySelectorAll('section[aria-labelledby="accessible-list-0"]').forEach(section => {
+        const heading = section.querySelector('h1');
+        if (heading && heading.textContent.trim().includes("Trending now")) {
+            section.remove();
+        }
+    });
+};
+
+// annoying css dividers
+function removeRemnants() {
+    document.querySelectorAll('div.css-175oi2r.r-kemksi.r-1kqtdi0.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x').forEach(el => el.remove());
+    document.querySelector('div.css-175oi2r.r-kemksi.r-1kqtdi0.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x > div.css-175oi2r.r-1bro5k0')?.remove();
+    document.querySelector('div.css-175oi2r.r-1kqtdi0.r-1867qdf.r-1phboty.r-1ifxtd0.r-1udh08x.r-1niwhzg.r-1yadl64')?.remove();
+}
+
+
+// remove the "Who to follow" sidebar section
+const removeWhoToFollowSection = () => {
+    document.querySelectorAll('aside[aria-label="Who to follow"]').forEach(el => el.remove());
+};
+
+
 const replaceXWithTwitterBird = () => {
     const xLink = document.querySelector('a[aria-label="X"]');
     if (xLink && !xLink.dataset.replaced) {
@@ -82,6 +122,10 @@ const replaceXWithTwitterBird = () => {
 
 
 const removeUnwantedElements = () => {
+    removeRemnants();
+    removeFooterLinks();
+    removeTrendingNowSection();
+    removeWhoToFollowSection();
     removeSubscribePremium();
     removeGrokImgGen();
     removeGrokLink();
@@ -94,6 +138,7 @@ const removeUnwantedElements = () => {
     removeJobs();
     removeLists();
     replacePostWithTweet();
+    removeWhiteGlowEffect();
 };
 
 removeUnwantedElements();
