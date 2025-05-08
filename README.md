@@ -1,4 +1,4 @@
-# de-muskify-twitter
+# classic twitter
 
 this repo's a browser extension that strips twitter down to what it should be. it kills off junk like premium ads, grok buttons, verified checkmarks, and ditches the “X” logo for the old-school bird. classic. everything updates on the fly as you scroll, thanks to mutation observers.
 
